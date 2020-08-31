@@ -1,0 +1,79 @@
+{
+  "id": "2031695",
+  "name": "layui-icon-extend",
+  "font_family": "iconfont",
+  "css_prefix_text": "layui-extend-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "5349515",
+      "name": "图谱-32",
+      "font_class": "tupu",
+      "unicode": "e6e1",
+      "unicode_decimal": 59105
+    },
+    {
+      "icon_id": "16746839",
+      "name": "自助分析",
+      "font_class": "zizhufenxi",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "14076014",
+      "name": "涉税信息采集",
+      "font_class": "sheshuixinxicaiji",
+      "unicode": "e624",
+      "unicode_decimal": 58916
+    },
+    {
+      "icon_id": "14095222",
+      "name": "分析",
+      "font_class": "zizhushifenxi",
+      "unicode": "e76d",
+      "unicode_decimal": 59245
+    },
+    {
+      "icon_id": "14975791",
+      "name": "数据可视化",
+      "font_class": "shujukeshihua",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "4734154",
+      "name": "权限",
+      "font_class": "quanxian",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "5166694",
+      "name": "归集",
+      "font_class": "guiji",
+      "unicode": "e6d5",
+      "unicode_decimal": 59093
+    },
+    {
+      "icon_id": "14075818",
+      "name": "预警分析",
+      "font_class": "yujingfenxi",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "6539442",
+      "name": "文件",
+      "font_class": "wenjian",
+      "unicode": "e689",
+      "unicode_decimal": 59017
+    },
+    {
+      "icon_id": "792389",
+      "name": "folder-文件夹",
+      "font_class": "wenjianjia",
+      "unicode": "e6cc",
+      "unicode_decimal": 59084
+    }
+  ]
+}
