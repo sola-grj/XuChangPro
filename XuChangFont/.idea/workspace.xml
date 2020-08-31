@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2fb0033e-9f64-4790-bc3d-806ae96ee95f" name="Default Changelist" comment="" />
+    <list default="true" id="2fb0033e-9f64-4790-bc3d-806ae96ee95f" name="Default Changelist" comment="添加用户管理子功能模块">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/start/index.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,6 +97,7 @@
       <workItem from="1598837121194" duration="927000" />
       <workItem from="1598839632912" duration="1851000" />
       <workItem from="1598842375491" duration="305000" />
+      <workItem from="1598843539345" duration="286000" />
     </task>
     <task id="LOCAL-00001" summary="添加用户管理子功能模块">
       <created>1598841430759</created>
@@ -108,6 +113,9 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
     <MESSAGE value="添加用户管理子功能模块" />
     <option name="LAST_COMMIT_MESSAGE" value="添加用户管理子功能模块" />
   </component>
@@ -116,22 +124,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="221" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1598514534474" />
-    <state x="385" y="10" key="CommitChangelistDialog2" timestamp="1598841427721">
+    <state x="385" y="10" key="CommitChangelistDialog2" timestamp="1598843805077">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="385" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598841427721" />
-    <state x="272" y="57" key="SettingsEditor" timestamp="1598839800948">
+    <state x="385" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598843805077" />
+    <state x="272" y="57" key="SettingsEditor" timestamp="1598843825138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="272" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598839800948" />
+    <state x="272" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598843825138" />
     <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1598841451123">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598841451123" />
-    <state x="461" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1598842405578">
+    <state x="461" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1598843540171">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="461" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1598842405578" />
+    <state x="461" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1598843540171" />
     <state x="584" y="200" width="621" height="480" key="find.popup" timestamp="1598777332189">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
