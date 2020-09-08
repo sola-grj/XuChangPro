@@ -69,7 +69,6 @@ layui.extend({
     
     //请求视图渲染
     view().render(path.join('/')).then(function(res){
-      console.log(4411111111)
       //遍历页签选项卡
       var matchTo
       ,tabs = $('#LAY_app_tabsheader>li');
@@ -87,7 +86,6 @@ layui.extend({
       //如果未在选项卡中匹配到，则追加选项卡
       if(setter.pageTabs && pathURL !== '/'){
         if(!matchTo){
-          console.log(44444444444444444)
           $(APP_BODY).append('<div class="layadmin-tabsbody-item layui-show"></div>');
           tabsPage.index = tabs.length;
           element.tabAdd(FILTER_TAB_TBAS, {
@@ -106,7 +104,6 @@ layui.extend({
       admin.tabsBodyChange(tabsPage.index);
       
     }).done(function(){
-      console.log(444444444444444448888888)
       layui.use('common', layui.cache.callback.common);
       $win.on('resize', layui.data.resize);
       

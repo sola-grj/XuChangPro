@@ -21,36 +21,20 @@
     <label class="layui-form-label">角色</label>
     <script type="text/html" template>
       <div class="layui-input-block" id="checkboxdata">
-        {{# if(d.params.role){  }}
-          {{#   layui.each(layui.data('test').roles,function(index,item){  }}
-                <input type='checkbox' name={{item}} title={{item}}  {{ (d.params.role.indexOf(item) !=-1 ? 'checked' : '') }}>
-          {{#  }); }}
-        {{#}else{  }}
-          {{#   layui.each(layui.data('test').roles,function(index,item){  }}
-                <input type='checkbox' name={{item}} title={{item}}  >
-          {{#  }); }}
-        {{# }  }}
+        {{# console.log(d.params.role)}}
       </div>
     </script>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">岗位</label>
-    <script type="text/html" template>
-      <div class="layui-input-block">
+    <div class="layui-input-inline">
       <select name="post" lay-verify="required">
         <option value=""></option>
-        {{# if(d.params.post){  }}
-          {{#   layui.each(layui.data('test').posts,function(index,item){ console.log("编辑==" + JSON.stringify(d.params.post) + "===" + item) }}
-                <option value={{item}} {{ (d.params.post === item ? 'selected' : '') }}>{{item}}</option>
-          {{#  }); }}
-        {{#}else{  }}
-          {{#   layui.each(layui.data('test').posts,function(index,item){ console.log("添加==" + JSON.stringify(item)) }}
-                <option value={{item}} {{ (d.params.post === item ? 'selected' : '') }}>{{item}}</option>
-          {{#  }); }}
-        {{# }  }}
+        <option value="0">开发岗</option>
+        <option value="1">运维岗</option>
+        <option value="2">管理岗</option>
       </select>
     </div>
-    </script>
   </div>
   <div class="layui-form-item">
     <label class="layui-form-label">手机号码</label>
@@ -91,30 +75,28 @@ layui.use(['admin', 'form', 'upload'], function(){
   var $ = layui.$
   ,form = layui.form
   ,upload = layui.upload;
-
-
   // 动态获取角色信息
-  // $(function () {
-  //   $.ajax({
-  //     url: "./json/checkboxdata.js",
-  //     type:'post',
-  //     dataType:'json',
-  //     success:function (res) {
-  //       var s = [];
-  //       if (res.code == 0){
-  //         for (let i = 0; i < res.data.length; i++) {
-  //           s.push(`<input type='checkbox' name='${res.data[i].name}' title='${res.data[i].name}' {{ d.params.role.indexOf('${res.data[i].name}')!=-1 ? 'checked' : '' }} > `)
-  //         }
-  //         $('#checkboxdata').append(s.join(""));
-  //         console.log("结果数组====》" + s)
-  //         form.render();
-  //
-  //       }
-  //
-  //
-  //     }
-  //   })
-  // })
+  $(function () {
+    $.ajax({
+      url: "./json/checkboxdata.js",
+      type:'post',
+      dataType:'json',
+      success:function (res) {
+        var s = [];
+        if (res.code == 0){
+          for (let i = 0; i < res.data.length; i++) {
+            s.push(`<input type='checkbox' name='${res.data[i].name}' title='${res.data[i].name}' {{ d.params.role.indexOf('${res.data[i].name}')!=-1 ? 'checked' : '' }} > `)
+          }
+          $('#checkboxdata').append(s.join(""));
+          console.log("结果数组====》" + s)
+          form.render();
+
+        }
+
+
+      }
+    })
+  })
   //上传头像
   upload.render({
     elem: '#layuiadmin-upload-useradmin'

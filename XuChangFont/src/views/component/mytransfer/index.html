@@ -1,6 +1,6 @@
 
 
-  <title>穿梭框组件666</title>
+  <title>穿梭框组件-mine</title>
 
   <div class="layui-card layadmin-header">
     <div class="layui-breadcrumb" lay-filter="breadcrumb">
@@ -70,7 +70,53 @@
     ,layer = layui.layer
     ,util = layui.util;
 
-    
+    $("body").transfer($("#test1"),{
+				theme: '' //页面按钮及主题颜色（未实现）
+				,width: "666" //定义宽度（穿梭左右两侧统一宽度）（必填）
+				,height: "666" //定义高度（必填）
+				,dataUrl:"json/list_tree.json"//默认展示数据url（必填）
+				,getDataAsync:"false"  //数据加载方式（默认true为异步加载；false为同步加载）
+				,isShowTab:"false"//定义是否显示页签
+				,tabData:[
+					//页签数据定义
+					{
+						tabTitle: "树结构"  //自定义标题
+						,tabindex:0//tab索引4
+						,tabId: 'ztree' //定义页签唯一索引（必备属性）
+						,showType: "tree"//页签数据展现形式
+						,tabDataUrl:"json/list_tree.json"//页签数据Url
+						,tabData: []//页签数据
+						,isDefault:true//是否默认选中
+						,isSearch:true//是否开启搜索功能
+					},
+					{
+						tabTitle: "列表"  //自定义标题
+						,tabindex:0//tab索引4
+						,tabId: 'ztree2' //定义页签唯一索引（必备属性）
+						,showType: "list"//页签数据展现形式
+						,tabDataUrl:"json/list.json"//页签数据Url
+						,tabData: []//页签数据
+						,isDefault:false//是否默认选中
+						,isSearch:true//是否开启搜索功能
+					}
+				]
+				,selectedValue: []//回显数据默认为空
+				,isSelectedRadio:"false"//已选数据是否单选，默认为false为多选，true为单选
+				,isRankSelected:""//是否按排序字段展示已选数据，默认为false按穿梭字段展示已选数据，若true为按机构内排序字段展示已选数据(预留设计)
+				,onchange: function(obj, index){
+					layer.alert(JSON.stringify(obj));//穿梭数据
+				}
+				,ongetData: function(obj, index){
+					// var getData = transfer.getData('key1'); //获取右侧已选数据
+					layer.alert(JSON.stringify(obj));
+				}
+				,onreload:function(){
+					layer.alert("重载组件！");
+				}
+
+
+			});
+
     //模拟数据
     var data1 = [
       {"value": "1", "title": "李白"}
@@ -83,7 +129,7 @@
       ,{"value": "8", "title": "矛盾"}
       ,{"value": "9", "title": "贤心"}
     ]
-    
+
     ,data2 = [
       {"value": "1", "title": "瓦罐汤"}
       ,{"value": "2", "title": "油酥饼"}
@@ -245,6 +291,13 @@
         }]
       }]
     }]
+
+    //基础效果
+    transfer.render({
+      elem: '#test-transfer-demo1'
+      ,data: data1
+    })
+
     transfer.render({
                 elem: '#test-transfer-demo2'
 				,theme: '' //页面按钮及主题颜色（未实现）
@@ -292,49 +345,88 @@
 
 
 			});
-   var mydata = {
-	"code": 0,
-	"data": [
-		{
-		"id": "1",
-		"title": "内蒙古自治区",
-		"children":[
-			{
-				"id": "112",
-				"title": "辽宁省"
-			}, {
-				"id": "113",
-				"title": "吉林省"
-			}, {
-				"id": "114",
-				"title": "黑龙江省"
-			}
-		]
-	},{
-		"id": "2",
-		"title": "内蒙古自治区",
-		"children":[
-			{
-				"id": "221",
-				"title": "辽宁省"
-			}, {
-				"id": "222",
-				"title": "吉林省"
-			}, {
-				"id": "223",
-				"title": "黑龙江省"
-			}
-		]
-	}]
-}
-
-    //基础效果
+    //定义标题及数据源
     transfer.render({
-                elem: '#test-transfer-demo1'
-				,theme: '' //页面按钮及主题颜色（未实现）
-				,width: "366" //定义宽度（穿梭左右两侧统一宽度）（必填）
-				,height: "366" //定义高度（必填）
-				// ,data: mydata //定义高度（必填）
+      elem: '#test-transfer-demo2'
+      ,title: ['候选文人', '获奖文人']  //自定义标题
+      ,data: data1
+      //,width: 150 //定义宽度
+      ,height: 210 //定义高度
+    })
+
+    //初始右侧数据
+    transfer.render({
+      elem: '#test-transfer-demo3'
+      ,data: data2
+      ,value: ["1", "3", "5", "7", "9", "11"]
+    })
+
+    //显示搜索框
+    transfer.render({
+      elem: '#test-transfer-demo4'
+      ,data: data2
+      ,title: ['文本墨客', '获奖文人']
+      ,showSearch: true
+    })
+
+    //数据格式解析
+    transfer.render({
+      elem: '#test-transfer-demo5'
+      ,parseData: function(res){
+        return {
+          "value": res.id //数据值
+          ,"title": res.name //数据标题
+          ,"disabled": res.disabled  //是否禁用
+          ,"checked": res.checked //是否选中
+        }
+      }
+      ,data: [
+        {"id": "1", "name": "李白"}
+        ,{"id": "2", "name": "杜甫"}
+        ,{"id": "3", "name": "贤心"}
+      ]
+      ,height: 150
+    })
+
+    //穿梭时的回调
+    transfer.render({
+      elem: '#test-transfer-demo6'
+      ,data: data1
+      ,onchange: function(obj, index){
+        var arr = ['左边', '右边'];
+        layer.alert('来自 <strong>'+ arr[index] + '</strong> 的数据：'+ JSON.stringify(obj)); //获得被穿梭时的数据
+      }
+    })
+
+    //实例调用
+    transfer.render({
+      elem: '#test-transfer-demo7'
+      ,data: data1
+      ,id: 'key123' //定义唯一索引
+    })
+    //批量办法定事件
+    util.event('lay-demoTransferActive', {
+      getData: function(othis){
+        var getData = transfer.getData('key123'); //获取右侧数据
+        layer.alert(JSON.stringify(getData));
+      }
+      ,reload:function(){
+        //实例重载
+        transfer.reload('key123', {
+          title: ['文人', '喜欢的文人']
+          ,value: ['2', '5', '9']
+          ,showSearch: true
+        })
+      }
+    });
+  });
+  </script>
+<script>
+	$(function(){
+			$("body").transfer($("#test1"),{
+				theme: '' //页面按钮及主题颜色（未实现）
+				,width: "666" //定义宽度（穿梭左右两侧统一宽度）（必填）
+				,height: "666" //定义高度（必填）
 				,dataUrl:"json/list_tree.json"//默认展示数据url（必填）
 				,getDataAsync:"false"  //数据加载方式（默认true为异步加载；false为同步加载）
 				,isShowTab:"false"//定义是否显示页签
@@ -377,85 +469,12 @@
 
 
 			});
-    // transfer.render({
-    //   elem: '#test-transfer-demo1'
-    //   ,data: data1
-    // })
+	})
 
 
-    //定义标题及数据源
-    transfer.render({
-      elem: '#test-transfer-demo2'
-      ,title: ['候选文人', '获奖文人']  //自定义标题
-      ,data: data1
-      //,width: 150 //定义宽度
-      ,height: 210 //定义高度
-    })
-   
-    //初始右侧数据
-    transfer.render({
-      elem: '#test-transfer-demo3'
-      ,data: data2
-      ,value: ["1", "3", "5", "7", "9", "11"]
-    })
-   
-    //显示搜索框
-    transfer.render({
-      elem: '#test-transfer-demo4'
-      ,data: data2
-      ,title: ['文本墨客', '获奖文人']
-      ,showSearch: true
-    })
-   
-    //数据格式解析
-    transfer.render({
-      elem: '#test-transfer-demo5'
-      ,parseData: function(res){
-        return {
-          "value": res.id //数据值
-          ,"title": res.name //数据标题
-          ,"disabled": res.disabled  //是否禁用
-          ,"checked": res.checked //是否选中
-        }
-      }
-      ,data: [
-        {"id": "1", "name": "李白"}
-        ,{"id": "2", "name": "杜甫"}
-        ,{"id": "3", "name": "贤心"}
-      ]
-      ,height: 150
-    })
-   
-    //穿梭时的回调
-    transfer.render({
-      elem: '#test-transfer-demo6'
-      ,data: data1
-      ,onchange: function(obj, index){
-        var arr = ['左边', '右边'];
-        layer.alert('来自 <strong>'+ arr[index] + '</strong> 的数据：'+ JSON.stringify(obj)); //获得被穿梭时的数据
-      }
-    })
-   
-    //实例调用
-    transfer.render({
-      elem: '#test-transfer-demo7'
-      ,data: data1
-      ,id: 'key123' //定义唯一索引
-    })
-    //批量办法定事件
-    util.event('lay-demoTransferActive', {
-      getData: function(othis){
-        var getData = transfer.getData('key123'); //获取右侧数据
-        layer.alert(JSON.stringify(getData)); 
-      }
-      ,reload:function(){
-        //实例重载
-        transfer.reload('key123', {
-          title: ['文人', '喜欢的文人']
-          ,value: ['2', '5', '9']
-          ,showSearch: true
-        })
-      }
-    });
-  });
-  </script>
+
+
+
+</script>
+</body>
+</html>

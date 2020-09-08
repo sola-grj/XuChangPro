@@ -18,31 +18,21 @@ layui.define(['table', 'form'], function(exports){
   //用户管理
   table.render({
     elem: '#LAY-user-manage'
-    ,url: './json/useradmin/testdata.js' //模拟接口
-    // ,url: './json/useradmin/webuser.js' //模拟接口
-    // ,url: 'http://127.0.0.1:8000/usermanage/' //模拟接口
-    ,where: {
-       access_token: layui.data('layuiAdmin').access_token
-       }
+    ,url: './json/useradmin/webuser.js' //模拟接口
     ,cols: [[
       {type: 'checkbox', fixed: 'left'}
       ,{field: 'id', width: 100, title: 'ID', sort: true}
       ,{field: 'username', title: '用户名', minWidth: 100}
-      ,{field: 'password', title: '密码', minWidth: 100}
-      // ,{field: 'avatar', title: '角色', width: 100, templet: '#imgTpl'}
-      ,{field: 'role', title: '角色'}
-      ,{field: 'post', title: '岗位'}
-      ,{field: 'phone', title: '手机号'}
+      ,{field: 'avatar', title: '头像', width: 100, templet: '#imgTpl'}
+      ,{field: 'phone', title: '手机'}
       ,{field: 'email', title: '邮箱'}
-      ,{field: 'sex', title: '性别'}
-      // ,{field: 'sex', width: 80, title: '性别'}
-      // ,{field: 'ip', title: 'IP'}
-      // ,{field: 'jointime', title: '加入时间', sort: true}
+      ,{field: 'sex', width: 80, title: '性别'}
+      ,{field: 'ip', title: 'IP'}
+      ,{field: 'jointime', title: '加入时间', sort: true}
       ,{title: '操作', width: 150, align:'center', fixed: 'right', toolbar: '#table-useradmin-webuser'}
     ]]
     ,page: true
-    // ,count: 3
-    // ,limit: 30
+    ,limit: 30
     ,height: 'full-320'
     ,text: '对不起，加载出现异常！'
   });
@@ -55,8 +45,6 @@ layui.define(['table', 'form'], function(exports){
         formType: 1
         ,title: '敏感操作，请验证口令'
       }, function(value, index){
-        var del_data = {id:index,passcode:value}
-        console.log(del_data)
         layer.close(index);
         
         layer.confirm('真的删除行么', function(index){
@@ -71,13 +59,12 @@ layui.define(['table', 'form'], function(exports){
         ,id: 'LAY-popup-user-add'
         ,success: function(layero, index){
           view(this.id).render('user/user/userform', data).done(function(){
-          // view(this.id).render('user/user/userform', data).done(function(){
             form.render(null, 'layuiadmin-form-useradmin');
             
             //监听提交
             form.on('submit(LAY-user-front-submit)', function(data){
               var field = data.field; //获取提交的字段
-              console.log("编辑后的信息===" +  JSON.stringify(field))
+
               //提交 Ajax 成功后，关闭当前弹层并重载表格
               //$.ajax({});
               layui.table.reload('LAY-user-manage'); //重载表格

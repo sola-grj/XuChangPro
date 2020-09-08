@@ -1,0 +1,37 @@
+{
+  "code":0,
+  "msg":"",
+  "count":100,
+  "data":[
+    {
+      "id":"001",
+      "username":"jerry",
+      "password":"1",
+      "role":"后端工程师",
+      "post":"开发岗",
+      "phone":"13011110000",
+      "email":"123@qq.com",
+      "sex":"男"
+    },
+      {
+      "id":"002",
+      "username":"Evan",
+      "password":"1",
+      "role":"后端工程师、前端工程师",
+      "post":"运维岗",
+      "phone":"13011110000",
+      "email":"123@qq.com",
+      "sex":"男"
+    },
+      {
+      "id":"003",
+      "username":"dou",
+      "password":"1",
+      "role":"UI工程师、运维工程师",
+      "post":"管理岗",
+      "phone":"13011110000",
+      "email":"123@qq.com",
+      "sex":"男"
+    }
+  ]
+}

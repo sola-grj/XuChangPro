@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>hello world</h1>
+</body>
+<script>
+    layui.use(['admin', 'form', 'upload'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , admin = layui.admin
+            , upload = layui.upload;
+        // 动态获取角色信息
+        $(function () {
+
+            admin.req({
+                url: './json/checkboxdata.js' //实际使用请改成服务端真实接口
+                // url: 'http://127.0.0.1:8000/login/' //实际使用请改成服务端真实接口
+                // ,type:'post'
+                , dataType: 'json'
+                , done: function (res) {
+                    var role_lis = []
+                    var post_lis = []
+                    if (res.code == 0) {
+                        for (let i = 0; i < res.roledata.length; i++) {
+                            role_lis.push(res.roledata[i].name)
+                        }
+                        for (let i = 0; i < res.postdata.length; i++) {
+                            post_lis.push(res.postdata[i].name)
+                        }
+                        // $('#checkboxdata').append(s.join(""));
+                        // console.log("结果数组====》" + s)
+                        form.render();
+
+                    }
+                    layui.data('test', {
+                        key: 'roles'
+                        , value: role_lis
+                    });
+                    layui.data('test', {
+                        key: 'posts'
+                        , value: post_lis
+                    });
+                }
+            });
+
+            console.log("lcoalstorage========" + JSON.stringify(layui.data('test')))
+        })
+
+    })
+
+</script>
+</html>
