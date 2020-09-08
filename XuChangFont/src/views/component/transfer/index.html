@@ -64,9 +64,10 @@
   </div>
 
   <script>
-  layui.use(['admin', 'transfer', 'layer', 'util'], function(){
+  layui.use(['admin', 'transfer', 'tree','layer', 'util'], function(){
     var $ = layui.$
     ,transfer = layui.transfer
+    ,tree = layui.tree
     ,layer = layui.layer
     ,util = layui.util;
 
@@ -329,58 +330,58 @@
 }
 
     //基础效果
-    transfer.render({
-                elem: '#test-transfer-demo1'
-				,theme: '' //页面按钮及主题颜色（未实现）
-				,width: "366" //定义宽度（穿梭左右两侧统一宽度）（必填）
-				,height: "366" //定义高度（必填）
-				// ,data: mydata //定义高度（必填）
-				,dataUrl:"json/list_tree.json"//默认展示数据url（必填）
-				,getDataAsync:"false"  //数据加载方式（默认true为异步加载；false为同步加载）
-				,isShowTab:"false"//定义是否显示页签
-				,tabData:[
-					//页签数据定义
-					{
-						tabTitle: "树结构"  //自定义标题
-						,tabindex:0//tab索引4
-						,tabId: 'ztree' //定义页签唯一索引（必备属性）
-						,showType: "tree"//页签数据展现形式
-						,tabDataUrl:"json/list_tree.json"//页签数据Url
-						,tabData: []//页签数据
-						,isDefault:true//是否默认选中
-						,isSearch:true//是否开启搜索功能
-					},
-					{
-						tabTitle: "列表"  //自定义标题
-						,tabindex:0//tab索引4
-						,tabId: 'ztree2' //定义页签唯一索引（必备属性）
-						,showType: "list"//页签数据展现形式
-						,tabDataUrl:"json/list.json"//页签数据Url
-						,tabData: []//页签数据
-						,isDefault:false//是否默认选中
-						,isSearch:true//是否开启搜索功能
-					}
-				]
-				,selectedValue: []//回显数据默认为空
-				,isSelectedRadio:"false"//已选数据是否单选，默认为false为多选，true为单选
-				,isRankSelected:""//是否按排序字段展示已选数据，默认为false按穿梭字段展示已选数据，若true为按机构内排序字段展示已选数据(预留设计)
-				,onchange: function(obj, index){
-					layer.alert(JSON.stringify(obj));//穿梭数据
-				}
-				,ongetData: function(obj, index){
-					// var getData = transfer.getData('key1'); //获取右侧已选数据
-					layer.alert(JSON.stringify(obj));
-				}
-				,onreload:function(){
-					layer.alert("重载组件！");
-				}
-
-
-			});
     // transfer.render({
-    //   elem: '#test-transfer-demo1'
-    //   ,data: data1
-    // })
+    //             elem: '#test-transfer-demo1'
+	// 			,theme: '' //页面按钮及主题颜色（未实现）
+	// 			,width: "366" //定义宽度（穿梭左右两侧统一宽度）（必填）
+	// 			,height: "366" //定义高度（必填）
+	// 			// ,data: mydata //定义高度（必填）
+	// 			,dataUrl:"json/list_tree.json"//默认展示数据url（必填）
+	// 			,getDataAsync:"false"  //数据加载方式（默认true为异步加载；false为同步加载）
+	// 			,isShowTab:"false"//定义是否显示页签
+	// 			,tabData:[
+	// 				//页签数据定义
+	// 				{
+	// 					tabTitle: "树结构"  //自定义标题
+	// 					,tabindex:0//tab索引4
+	// 					,tabId: 'ztree' //定义页签唯一索引（必备属性）
+	// 					,showType: "tree"//页签数据展现形式
+	// 					,tabDataUrl:"json/list_tree.json"//页签数据Url
+	// 					,tabData: []//页签数据
+	// 					,isDefault:true//是否默认选中
+	// 					,isSearch:true//是否开启搜索功能
+	// 				},
+	// 				{
+	// 					tabTitle: "列表"  //自定义标题
+	// 					,tabindex:0//tab索引4
+	// 					,tabId: 'ztree2' //定义页签唯一索引（必备属性）
+	// 					,showType: "list"//页签数据展现形式
+	// 					,tabDataUrl:"json/list.json"//页签数据Url
+	// 					,tabData: []//页签数据
+	// 					,isDefault:false//是否默认选中
+	// 					,isSearch:true//是否开启搜索功能
+	// 				}
+	// 			]
+	// 			,selectedValue: []//回显数据默认为空
+	// 			,isSelectedRadio:"false"//已选数据是否单选，默认为false为多选，true为单选
+	// 			,isRankSelected:""//是否按排序字段展示已选数据，默认为false按穿梭字段展示已选数据，若true为按机构内排序字段展示已选数据(预留设计)
+	// 			,onchange: function(obj, index){
+	// 				layer.alert(JSON.stringify(obj));//穿梭数据
+	// 			}
+	// 			,ongetData: function(obj, index){
+	// 				// var getData = transfer.getData('key1'); //获取右侧已选数据
+	// 				layer.alert(JSON.stringify(obj));
+	// 			}
+	// 			,onreload:function(){
+	// 				layer.alert("重载组件！");
+	// 			}
+    //
+    //
+	// 		});
+    transfer.render({
+      elem: '#test-transfer-demo1'
+      ,data: data1
+    })
 
 
     //定义标题及数据源

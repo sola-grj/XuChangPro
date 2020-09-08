@@ -22,11 +22,13 @@ layui.define(['laytpl', 'layer', 'element', 'util'], function(exports){
     
     ,debug: true //是否开启调试模式。如开启，接口异常时会抛出异常 URL 等信息
     
-    ,interceptor: false //是否开启未登入拦截
+    ,interceptor: true //是否开启未登入拦截
     
     //自定义请求字段
     ,request: {
-      tokenName: 'access_token' //自动携带 token 的字段名。可设置 false 不携带。
+      // tokenName: 'access_token' //自动携带 token 的字段名。可设置 false 不携带。
+      tokenName: 'Authorization' //自动携带 token 的字段名。可设置 false 不携带。
+      // tokenName: false //自动携带 token 的字段名。可设置 false 不携带。
     }
     
     //自定义响应字段

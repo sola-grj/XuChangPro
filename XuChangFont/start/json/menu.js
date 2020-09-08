@@ -451,6 +451,9 @@
       "name": "transfer"
       ,"title": "穿梭框"
     }, {
+      "name": "mytransfer"
+      ,"title": "自定制穿梭框"
+    }, {
       "name": "tree"
       ,"title": "树形组件"
     }, {

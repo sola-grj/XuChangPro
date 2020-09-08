@@ -21,9 +21,9 @@ layui.define(['table', 'form'], function(exports){
     ,url: './json/useradmin/testdata.js' //模拟接口
     // ,url: './json/useradmin/webuser.js' //模拟接口
     // ,url: 'http://127.0.0.1:8000/usermanage/' //模拟接口
-    ,where: {
-       access_token: layui.data('layuiAdmin').access_token
-       }
+    // ,where: {
+    //    Authorization: layui.data('layuiAdmin').Authorization
+    //    }
     ,cols: [[
       {type: 'checkbox', fixed: 'left'}
       ,{field: 'id', width: 100, title: 'ID', sort: true}

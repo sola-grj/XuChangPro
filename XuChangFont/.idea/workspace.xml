@@ -2,44 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2fb0033e-9f64-4790-bc3d-806ae96ee95f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/controller/captcha.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/sliderVerify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/transfer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/useradminbak.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/sliderVerify/sliderVerify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/style/res/template/index_logobak.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/component/mytransfer/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/user/user/edituser.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/user/user/olduserform.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/start/json/checkboxdata.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/start/json/list.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/start/json/list_tree.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/start/json/selectdata.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/start/json/useradmin/testdata.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/list.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/json/list_tree.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/css/transfer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/js/transfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/js/transferTool.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/js/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/component/mytransfer/json/list.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/component/mytransfer/json/list_tree.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start/layui/css/base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start/layui/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start/layui/css/transfer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start/layui/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start/layui/js/mytransfer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start/layui/js/myutils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/start/layui/js/transferTool.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/useradmin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/useradmin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/image/logo.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/res/template/bg.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/res/template/bg.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/res/template/bgbak.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/res/template/bgbak.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/res/template/index_logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/res/template/index_logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/DataAnalysisWarning/FourOneAnalysis/ConstructionIndustry.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/DataAnalysisWarning/FourOneAnalysis/ConstructionIndustry.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/UserPermission/UserManage/UserManage.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/UserPermission/UserManage/UserManage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/component/mytransfer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/component/mytransfer/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/component/transfer/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/component/transfer/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/home/myindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/layout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/myindex.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/myindex.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/user/user/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/user/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/user/user/userform.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/user/user/userform.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/start/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/json/list_tree.json" beforeDir="false" afterPath="$PROJECT_DIR$/start/json/list_tree.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/start/json/menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/start/json/menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/json/menubak.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/json/mymenu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/start/json/user/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/start/json/user/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/start/layui/lay/modules/transfer.js" beforeDir="false" afterPath="$PROJECT_DIR$/start/layui/lay/modules/transfer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +69,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/start/layui/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -86,17 +80,19 @@
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\openProject\XuChangPro\XuChangFont\start\layui\js" />
+      <recent name="E:\openProject\XuChangPro\XuChangFont\start\json" />
+      <recent name="E:\openProject\XuChangPro\XuChangFont" />
+      <recent name="E:\openProject\XuChangPro\XuChangFont\src\views\component\mytransfer" />
+      <recent name="E:\openProject\XuChangPro\XuChangFont\start\layui" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\openProject\XuChangPro\XuChangFont\start\json\test" />
+      <recent name="E:\openProject\XuChangPro\XuChangFont\src\views\component\mytransfer" />
       <recent name="E:\openProject\layuiAdmin2020\layuiAdmin.pro-v2020.1.24\src\views\UserPermission\PermissionManage" />
       <recent name="E:\openProject\layuiAdmin2020\layuiAdmin.pro-v2020.1.24\src\views\UserPermission\UserManage" />
       <recent name="E:\openProject\layuiAdmin2020\layuiAdmin.pro-v2020.1.24\start\layui\css\modules" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\openProject\XuChangPro\XuChangFont\src\views" />
-      <recent name="E:\openProject\XuChangPro\XuChangFont\src\views\component" />
-      <recent name="E:\openProject\XuChangPro\XuChangFont\src\controller" />
-      <recent name="E:\openProject\XuChangPro\XuChangFont\start\json" />
-      <recent name="E:\openProject\XuChangPro\XuChangFont\src\style\res\template" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -140,7 +136,7 @@
       <workItem from="1599096697433" duration="25274000" />
       <workItem from="1599182446054" duration="8408000" />
       <workItem from="1599442414404" duration="19847000" />
-      <workItem from="1599527731363" duration="286000" />
+      <workItem from="1599527731363" duration="30184000" />
     </task>
     <task id="LOCAL-00001" summary="添加用户管理子功能模块">
       <created>1598841430759</created>
@@ -156,7 +152,14 @@
       <option name="project" value="LOCAL" />
       <updated>1598843856482</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="前后台登录接口调试成功">
+      <created>1599528179156</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1599528179156</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -168,33 +171,38 @@
     </ignored-roots>
     <MESSAGE value="添加用户管理子功能模块" />
     <MESSAGE value="index测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="index测试" />
+    <MESSAGE value="前后台登录接口调试成功" />
+    <option name="LAST_COMMIT_MESSAGE" value="前后台登录接口调试成功" />
   </component>
   <component name="WindowStateProjectService">
     <state x="498" y="221" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598514534474">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="221" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1598514534474" />
-    <state x="385" y="10" key="CommitChangelistDialog2" timestamp="1598843854371">
+    <state x="385" y="10" key="CommitChangelistDialog2" timestamp="1599528170632">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="385" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1598843854371" />
+    <state x="385" y="10" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599528170632" />
+    <state x="675" y="198" key="FileChooserDialogImpl" timestamp="1599535778298">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="675" y="198" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1599535778298" />
     <state x="272" y="57" key="SettingsEditor" timestamp="1598843825138">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="272" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598843825138" />
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1598843878030">
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2" timestamp="1599528201378">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1598843878030" />
+    <state x="361" y="148" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1599528201378" />
     <state x="461" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1598922559222">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="461" y="240" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1598922559222" />
-    <state x="584" y="200" width="621" height="480" key="find.popup" timestamp="1599472325626">
+    <state x="584" y="200" width="621" height="480" key="find.popup" timestamp="1599554580895">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="584" y="200" width="621" height="480" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1599472325626" />
+    <state x="584" y="200" width="621" height="480" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1599554580895" />
     <state x="497" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1598427699802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

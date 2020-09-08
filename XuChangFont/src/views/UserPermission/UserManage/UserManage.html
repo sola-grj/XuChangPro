@@ -40,14 +40,14 @@ layui.use('useradmin', layui.factory('useradmin')).use(['admin', 'useradmin', 't
   ,view = layui.view
   ,table = layui.table
   ,form = layui.form;
-  table.set({
-     headers: { //通过 request 头传递
-     access_token: layui.data('layuiAdmin').access_token
-     }
-     ,where: { //通过参数传递
-     access_token: layui.data('layuiAdmin').access_token
-     }
-    });
+  // table.set({
+  //    headers: { //通过 request 头传递
+  //    Authorization: layui.data('layuiAdmin').Authorization
+  //    }
+  //    ,where: { //通过参数传递
+  //    Authorization: layui.data('layuiAdmin').Authorization
+  //    }
+  //   });
 
   form.render(null, 'layadmin-userfront-formlist');
 
