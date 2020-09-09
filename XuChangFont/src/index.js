@@ -161,7 +161,7 @@ layui.extend({
                 if (setter.interceptor) {
                     var local = layui.data(setter.tableName);
                     if (!local[setter.request.tokenName]) {
-                        console.log("==============" + encodeURIComponent(pathURL))
+                        alert(6666)
                         // return location.hash = '/user/login/redirect='+ encodeURIComponent(pathURL); //跳转到登入页
                         let redirectUrl = window.location.href;
                         let oauthUrl = 'http://10.0.23.97:8094/auth/oauth/authorize?response_type=token&client_id=client_1&redirect_uri='

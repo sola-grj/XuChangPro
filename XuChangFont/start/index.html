@@ -42,13 +42,28 @@
             , layer = layui.layer
             , setter = layui.setter;
         var args_lis = window.location.hash;
-        var a = args_lis.split('&')
-        var r = /^#access_token=(.*)/;
-        var access_token = r.exec(a[0])[1];
-        layui.data('layuiAdmin', {
-            key: "Authorization"
-            , value: `Bearer ${access_token}`
-        });
+        console.log("参数列表===" + args_lis)
+        // layui.data('layuiAdmin', {
+        //     key: "Authorization"
+        //     , value: `Bearer ${access_token}`
+        // });
+        var session_access_token = layui.sessionData('access').Authorization;
+        if (args_lis.indexOf("access_token") != -1) {
+            var a = args_lis.split('&')
+            var r = /^#access_token=(.*)/;
+            var access_token = r.exec(a[0])[1];
+            layui.data('layuiAdmin', {
+                key: "Authorization"
+                , value: `Bearer ${access_token}`
+            });
+            // layui.sessionData('access', {
+            //     key: "Authorization"
+            //     , value: `Bearer ${access_token}`
+            // });
+        }
+        console.log("url==" + access_token)
+        console.log("session===" + session_access_token)
+
     });
 
 </script>

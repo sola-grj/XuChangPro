@@ -1,33 +1,4 @@
 <div class="layui-layout layui-layout-admin">
-    <script>
-        layui.use(['layer', 'admin', 'form', 'user'], function () {
-            var $ = layui.$
-                , layer = layui.layer
-                , setter = layui.setter
-                , admin = layui.admin
-                , form = layui.form
-                , router = layui.router()
-                , search = router.search;
-            layer.ready(function () {
-                layer.msg('很高兴一开场就见到你');
-
-            });
-            var args_lis = window.location.hash;
-            var a = args_lis.split('&')
-            var r = /^#access_token=(.*)/;
-            var access_token = r.exec(a[0])[1];
-            layui.data('access', {
-                key: 'Authorization'
-                , value: `Bearer ${access_token}`
-            });
-            layui.data(setter.tableName, {
-                key: layui.setter.request.tokenName
-                , value: `Bearer ${access_token}`
-            });
-            console.log(layui.data('access').Authorization)
-        });
-
-    </script>
 
     <div class="layui-header">
         <!-- 头部区域 -->
@@ -110,18 +81,16 @@
             </li>
         </ul>
     </div>
-    <!--            <script type="text/html" template lay-url="./json/menu.js?v={{ layui.admin.v }}"-->
+    <!--            <script type="text/html" template lay-url="./json/menu.js?v={{ layui.admin.v }}"   http://10.0.23.97:8195/portal/menutree  -->
 
     <!-- 侧边菜单 -->
     <div class="layui-side layui-side-menu" id="cbl">
         <div class="layui-side-scroll">
-            <script type="text/html" template lay-url="http://10.0.23.97:8195/portal/menutree"
+            <script type="text/html" template lay-url="./json/menu.js?v={{ layui.admin.v }}"
                     lay-headers="{Authorization: '{{layui.data('layuiAdmin').Authorization}}' }"
                     lay-done="console.log(d);layui.element.render('nav', 'layadmin-system-side-menu');"
                     id="TPL_layout">
-                {{#
-                console.log("html中的======" + layui.data('access').Authorization)
-                }}
+
 
                 <div class="layui-logo" lay-href="">
                     <!--          <img  src="{{ layui.setter.base }}style/res/template/index_logo.png" width="200px">-->

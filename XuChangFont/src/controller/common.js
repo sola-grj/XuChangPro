@@ -25,19 +25,23 @@ layui.define(function (exports) {
             key: 'Authorization'
             , remove: true
         });
-        // window.location()
-        alert("删除之后" + layui.data('layuiAdmin').Authorization)
-        // location.hash = 'http://10.0.23.97:8094/auth/oauth/authorize?response_type=token&client_id=client_1&redirect_uri=http://localhost:63342/XuChangFont/start/index.html?_ijt=r8gamlt0o96j6ai6l1hpsfut19#/home/home'
+        localStorage.clear()
+        window.location.href = 'http://10.0.23.97:8094/auth/logout'
+        // alert("删除之后" + layui.data('access').Authorization)
+        // debugger
+        // window.location.href = 'http://10.0.23.97:8094/auth/oauth/authorize?response_type=token&client_id=client_1&redirect_uri=http://localhost:63342/XuChangFont/start/index.html?_ijt=r8gamlt0o96j6ai6l1hpsfut19#/home/home'
         //执行退出接口
+
         // admin.req({
         //     // url: './json/user/logout.js'
-        //     url: 'http://10.0.23.97:8094/auth/oauth/authorize?response_type=token&client_id=client_1&redirect_uri=http://localhost:63342/XuChangFont/start/index.html?_ijt=r8gamlt0o96j6ai6l1hpsfut19#/home/home'
+        //     url: 'http://10.0.23.97:8094/auth/logout'
         //     , type: 'get'
         //     , data: {}
         //     , done: function (res) { //这里要说明一下：done 是只有 response 的 code 正常才会执行。而 succese 则是只要 http 为 200 就会执行
         //
         //         //清空本地记录的 token，并跳转到登入页
-        //         admin.exit();
+        //         window.location.href('http://10.0.23.97:8094/auth/oauth/authorize?response_type=token&client_id=client_1&redirect_uri=http://localhost:63342/XuChangFont/start/index.html?_ijt=r8gamlt0o96j6ai6l1hpsfut19#/home/home');
+        //         // admin.exit();
         //     }
         // });
     };

@@ -86,6 +86,7 @@
                     dataType: "json",
                     success: function (R) {
                         if (R.code == 0) {
+                            console.log("拿到的数据==" + JSON.stringify(R))
                             data = R;
                         } else {
                             data = {};
@@ -95,6 +96,7 @@
                     }
                 });
                 return data;
+
             },
             /**渲染数据 by chenyi 2017/6/21*/
             renderData: function (R, $grid, cyProps) {
@@ -307,8 +309,13 @@
                         },
                         oncheck: function (obj) {
                             var treeIdAll = '#' + treeId;
+                            console.log("treeid是啥====" + treeIdAll)
                             //获取选中节点
                             var checkData = layui.tree.getChecked("transferLeftTreeChecked");
+                            console.log(obj.data);
+                            console.log(obj.checked);
+                            console.log(obj.elem);
+                            console.log(checkData);
                             //已选数据添加及删除
                             selectTreeChecked(obj.data, obj.checked, obj.elem, checkData)
                         },
@@ -337,6 +344,7 @@
                 var _listObj = {};
                 //当前选中数据
                 var $thisCheck = $this.parents("dd").find("input[type='checkbox']");
+                console.log("====当前选中" + JSON.stringify($thisCheck))
                 //选中数据id值
                 var _value = $this.parents("dd").attr("lay-value");
                 //选中数据tatle值
@@ -485,27 +493,29 @@
             var _name = $this.attr("lay-name") || "";
             var $parent = $this.parents(".transfer-content");
             var _thisSelectValue = [];
-            if (notSelectData.length) {
-                notSelectData.forEach(function (v) {
-                    var _value = v.id, _title = v.title;
-                    //是否为单选数据
-                    if (isSelectedRadio == "true") {
-                        selectedValue[0] = v;
-                        selectedValueId[0] = _value;
-                        $(".transfer-panel-left").find("input[type='checkbox']").attr("checked", false);
-                    } else {
-                        if (selectedValueId.indexOf(_value) == -1) {
-                            selectedValueId.push(_value);
-                            selectedValue.push(v);
-                            _thisSelectValue.push(v);
-                            // $("input[value='"+ _value +"']").attr('checked', false);
-                            // $(".transfer-panel-left").find(".transfer-div").find("input[value='"+ _value +"']").attr("disabled","disabled")
-                        }
-                    }
-                });
-            }
+            console.log("右移监听中的==" + JSON.stringify(notSelectData))
+            // if (notSelectData.length) {
+            //     notSelectData.forEach(function (v) {
+            //         var _value = v.id, _title = v.title;
+            //         //是否为单选数据
+            //         if (isSelectedRadio == "true") {
+            //             selectedValue[0] = v;
+            //             selectedValueId[0] = _value;
+            //             $(".transfer-panel-left").find("input[type='checkbox']").attr("checked", false);
+            //         } else {
+            //             if (selectedValueId.indexOf(_value) == -1) {
+            //                 selectedValueId.push(_value);
+            //                 selectedValue.push(v);
+            //                 _thisSelectValue.push(v);
+            //                 // $("input[value='"+ _value +"']").attr('checked', false);
+            //                 // $(".transfer-panel-left").find(".transfer-div").find("input[value='"+ _value +"']").attr("disabled","disabled")
+            //             }
+            //         }
+            //     });
+            // }
 
-            rightListLoad($parent, _name, selectedValue, selectedValueId)
+            myfunc(notSelectData);
+            // rightListLoad($parent, _name, selectedValue, selectedValueId)
             cyProps.onchange(_thisSelectValue, $this)
             //重置按钮禁用
             $parent.find(".transfer-to-right button").addClass("layui-btn-disabled");
@@ -521,6 +531,7 @@
             var $this = $(this);
             var _name = $this.attr("lay-name") || "";
             var $parent = $this.parents(".transfer-content");
+            console.log("左移监听中的==" + JSON.stringify(rightSelectValue))
             if (rightSelectValue.length) {
                 rightSelectValue.forEach(function (v) {
                     var _value = v.id, _title = v.title;
@@ -562,6 +573,43 @@
             $(this).prev().val("");
             searchData($(this));
         });
+
+        function myfunc(checkdata) {
+            layui.tree.render({
+                elem: '#rightListContent',
+                data: checkdata,
+                edit: ['add', 'update', 'del'],
+                showCheckbox: true,
+                id: "transferRightTreeChecked",
+                click: function (node, a) {
+                    console.log(node);
+                },
+                oncheck: function (obj) {
+                    var _checkData = obj.data,//当前数据
+                        _checktype = obj.checked,//勾选状态
+                        _checkElem = obj.elem;//当前节点
+                    var $this = $(_checkElem);
+                    var $parent = $this.parents(".transfer-content");
+
+                    // var treeIdAll = '#' + treeId;
+                    //获取选中节点
+                    var checkData = layui.tree.getChecked("transferRightTreeChecked");
+                    rightSelectValue = checkData
+                    if (checkData) {
+                        $parent.find(".transfer-to-left button").removeClass("layui-btn-disabled");
+                    }else {
+                        $parent.find(".transfer-to-left button").addClass("layui-btn-disabled");
+                    }
+                    console.log(checkData);
+                    //已选数据添加及删除
+                    // selectTreeChecked(obj.data, obj.checked, obj.elem, checkData)
+                },
+                ondbclick: function (node, a) {
+                    alert(2222)
+                }
+            });
+
+        }
 
         /**获取搜索后的数据  **/
         function searchData($this) {
@@ -644,7 +692,7 @@
                     form.render('checkbox');
                 });
             } else {
-                // notSelectDataId = [];
+
                 // for (var i = 0; i < _checkAll.length; i++) {
                 // 	_checkAll[i].children.forEach(function(v) {
                 // 		_arrCheckData.push(v);//选中数据集合
@@ -672,9 +720,11 @@
                     }
                     // _checkAll[i].children
                 }
+                console.log("_arrCheckData==" + JSON.stringify(_arrCheckData))
             }
 
-            notSelectData = _arrCheckData;
+            // notSelectData = _arrCheckData;
+            notSelectData = _checkAll;
             if (_checktype && notSelectData.length) {
                 $parent.find(".transfer-to-right button").removeClass("layui-btn-disabled");
             } else {
